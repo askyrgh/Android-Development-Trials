@@ -20,5 +20,14 @@ public class Main {
         System.out.print("Name: " + name + "\n");
         System.out.print("Roll no: " + rollNumber + "\n");
         System.out.print("Contact no: " + contactNumber + "\n");
+
+        if(name.equals("Sky"))
+        {
+            System.out.print("Valid username!");
+        }
+        else
+        {
+            System.out.print(("Invalid username!"));
+        }
     }
 }
