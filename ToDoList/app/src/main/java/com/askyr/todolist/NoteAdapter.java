@@ -30,7 +30,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
     @Override
     public NoteHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.note_holder, parent);// it will inflate the viewHolder from the context that we are getting from the main activity
+        View view = LayoutInflater.from(context).inflate(R.layout.note_holder, parent, false);// it will inflate the viewHolder from the context that we are getting from the main activity
 
         return new NoteHolder(view);
     }
