@@ -36,7 +36,7 @@
                 tools:text="Title" />
 
             <EditText
-                android:id="@+id/edt_edit_descrption"
+                android:id="@+id/edt_edit_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"

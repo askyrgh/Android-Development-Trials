@@ -1,14 +1,18 @@
 package com.askyr.todolist;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -108,8 +112,37 @@ public class MainActivity extends AppCompatActivity {
 
         notes = readNotes();
 
-        noteAdapter = new NoteAdapter(notes, this);
+        noteAdapter = new NoteAdapter(notes, this, new NoteAdapter.ItemClicked() {
+            @Override
+            public void onClick(int position, View view) {
+                editNote(notes.get(position).getId(), view);
+            }
+        });
 
         recyclerView.setAdapter(noteAdapter);
+    }
+
+    private void editNote(int noteId, View view) {
+        NoteHandler noteHandler = new NoteHandler(this);
+
+        Note note = noteHandler.readSingleNote(noteId);
+
+        Intent intent = new Intent(this, EditNoteActivity.class);
+        intent.putExtra("title", note.getTitle());
+        intent.putExtra("description", note.getDescription());
+        intent.putExtra("id", note.getId());
+
+        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this, view, ViewCompat.getTransitionName(view));
+        startActivityForResult(intent, 1, optionsCompat.toBundle());
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // When coming back from edit note activity this will verify and update the note to display on main activity accordingly
+        if(requestCode == 1) {
+            loadNotes();
+        }
     }
 }

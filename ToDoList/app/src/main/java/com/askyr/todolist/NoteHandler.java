@@ -69,7 +69,7 @@ public class NoteHandler extends DatabaseHelper {
 
         Note note = null;
 
-        String sqlQuery = "SELECT * FROM Note WHERE id=" + idArg;
+        String sqlQuery = "SELECT * FROM Note WHERE id =" + idArg;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(sqlQuery, null);
 
