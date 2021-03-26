@@ -18,7 +18,7 @@ public class NoteHandler extends DatabaseHelper {
 
     // Methods used for Create, Read, Update & Delete (CRUD) operations in the database
 
-    public boolean create(Note note) {
+    public boolean createNote(Note note) {
         // Method to create ana insert a new tuple(note) in the database
 
         ContentValues values = new ContentValues();
