@@ -1,6 +1,6 @@
 <h1>Android-Development-Trials</h1>
 <p>This repository holds all the projects I complete to learn more about Native Android Development using Java.</p>
-<br>
+
 <h2>Tutorial Apps</h2>
 <ol>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/FirstApp">Android template project</a></li>
@@ -14,14 +14,14 @@
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/VideoView">VideoView component Tutorial</a></li>
     
 </ol>
-<br>
+
 <h2>Fully Functional Apps</h2>
 <ol>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/ToDoList">To-Do List</a></li>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/CodeScanner">QR and Barcode Scanner</a></li>
 
 </ol>
-<br>
+
 <h2>Apps under Development</h2>
 <ol>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/ChatApp">Chatting App</a></li>
