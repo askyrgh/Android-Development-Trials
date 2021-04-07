@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ChatApp</string>
+    <string name="account_exists">Already have account? Log In</string>
 </resources>
