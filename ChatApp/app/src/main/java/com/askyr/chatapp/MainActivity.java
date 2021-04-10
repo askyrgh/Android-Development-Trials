@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -101,6 +102,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
+                            // storing a new instance of User object in database for each new signUp
+                            FirebaseDatabase.getInstance().
+                                    getReference("user/" + FirebaseAuth.getInstance().getCurrentUser().getUid()).
+                                    setValue(new User(edtUsername.getText().toString(), edtEmail.getText().toString(), ""));
+
                             // on successful sign-up we are redirected to Friends Activity
                             startActivity(new Intent(MainActivity.this, FriendsActivity.class));
                             Toast.makeText(MainActivity.this, "Signed Up Successfully!", Toast.LENGTH_SHORT).show();
