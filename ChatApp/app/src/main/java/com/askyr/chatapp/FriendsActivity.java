@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -30,6 +31,8 @@ public class FriendsActivity extends AppCompatActivity {
     private UsersAdapter.OnUserClickListener onUserClickListener;
     private SwipeRefreshLayout swipeRefreshLayout;
 
+    private String myImageURL;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,14 +46,23 @@ public class FriendsActivity extends AppCompatActivity {
         onUserClickListener = new UsersAdapter.OnUserClickListener() {
             @Override
             public void onUserClicked(int position) {
-                Toast.makeText(FriendsActivity.this, "Tapped on user " + users.get(position).getUserName(), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(FriendsActivity.this, MessageActivity.class)
+                        .putExtra("username_of_roommate", users.get(position).getUserName())
+                        .putExtra("email_of_roommate", users.get(position).getEmail())
+                        .putExtra("roommate_image_URL", users.get(position).getProfilePicture())
+                        .putExtra("my_image_URL", myImageURL)
+                );
+
+                // Toast.makeText(FriendsActivity.this, "Tapped on user " + users.get(position).getUserName(), Toast.LENGTH_SHORT).show();
             }
         };
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                // refreshing on pull
                 getUsers();
+                // disabling the refresh to prevent indefinite spinning of the indicator
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
@@ -75,18 +87,31 @@ public class FriendsActivity extends AppCompatActivity {
     }
 
     private void getUsers() {
+        // clearing the previously populated array and repopulating it with updated entries
         users.clear();
+        // fetching the users present in the users table in database
         FirebaseDatabase.getInstance().getReference("user").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // adding User instances to the ArrayList
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     users.add(dataSnapshot.getValue(User.class));
                 }
+                // initializing the UserAdapter instance so RecyclerView can show the users
                 usersAdapter = new UsersAdapter(users, FriendsActivity.this, onUserClickListener);
                 recyclerView.setLayoutManager(new LinearLayoutManager(FriendsActivity.this));
                 recyclerView.setAdapter(usersAdapter);
                 progressBar.setVisibility(View.GONE);
                 recyclerView.setVisibility(View.VISIBLE);
+
+                // traversing the users list to locate our own user data in the list
+                for (User user : users) {
+                    // if emails match than write the myImageURL
+                    if(user.getEmail().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())) {
+                        myImageURL = user.getProfilePicture();
+                        return;
+                    }
+                }
             }
 
             @Override
