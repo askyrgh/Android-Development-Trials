@@ -11,7 +11,7 @@
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/ChatApp/app/src/main/java/com/askyr/chatapp/User.java">User</a></li>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/ChatApp/app/src/main/java/com/askyr/chatapp/UsersAdapter.java">UserAdapter</a></li>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/ChatApp/app/src/main/java/com/askyr/chatapp/Message.java">Message</a></li>
-    <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/ChatApp/app/src/main/java/com/askyr/chatapp/MessageActivity.java">MessageActivity</a></li>
+    <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/ChatApp/app/src/main/java/com/askyr/chatapp/MessageActivity.java">MessageAdapter</a></li>
 </ol>
 <h2>Activity Layouts</h2>
 <ol>
