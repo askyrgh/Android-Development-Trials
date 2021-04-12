@@ -69,6 +69,7 @@
         android:paddingHorizontal="20dp"
         android:layout_marginBottom="10dp"
         android:layout_marginHorizontal="10dp"
+        android:hint="Type your message here"
         android:background="@drawable/message_input_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imgSendIcon"
