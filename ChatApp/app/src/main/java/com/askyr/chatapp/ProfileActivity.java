@@ -14,9 +14,10 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,6 +33,10 @@ public class ProfileActivity extends AppCompatActivity {
 
     private Button btnLogOut, btnUpload;
     private ImageView imgProfile;
+    private TextView txtUserEmail;
+
+    private String myImageURL;
+    private String userEmail;
 
     private Uri imagePath;
 
@@ -43,6 +48,8 @@ public class ProfileActivity extends AppCompatActivity {
         btnLogOut = findViewById(R.id.btnLogOut);
         btnUpload = findViewById(R.id.btnUploadImage);
         imgProfile = findViewById(R.id.imgProfile);
+        txtUserEmail = findViewById(R.id.txtUserEmail);
+        myImageURL = getIntent().getStringExtra("profile_image_URL");
 
         btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +79,8 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivityForResult(photoIntent, 1);
             }
         });
+
+        fetchProfileData();
     }
 
     @Override
@@ -151,5 +160,16 @@ public class ProfileActivity extends AppCompatActivity {
     private void updateProfilePicture(String url) {
         // rewriting the profilePicture value(URL) of the user in the database
         FirebaseDatabase.getInstance().getReference("user/" + FirebaseAuth.getInstance().getCurrentUser().getUid() + "/profilePicture").setValue(url);
+    }
+
+    private void fetchProfileData() {
+        String userEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail().toString();
+
+        // displaying the profile image fetched from database URL on profile activity
+        if (!myImageURL.isEmpty()) {
+            Glide.with(ProfileActivity.this).load(myImageURL).error(R.drawable.account_img).placeholder(R.drawable.account_img).into(imgProfile);
+        }
+        // displaying the email on profile activity
+        txtUserEmail.setText(userEmail);
     }
 }

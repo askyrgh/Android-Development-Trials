@@ -35,8 +35,6 @@
             android:textColor="@android:color/white"
             android:hint="USERNAME"/>
 
-
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

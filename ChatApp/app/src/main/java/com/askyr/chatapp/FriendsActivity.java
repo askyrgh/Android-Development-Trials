@@ -81,7 +81,7 @@ public class FriendsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.menuItemProfile) {
             // on pressing the profile(menu item) we are redirected to ProfileActivity
-            startActivity(new Intent(FriendsActivity.this, ProfileActivity.class));
+            startActivity(new Intent(FriendsActivity.this, ProfileActivity.class).putExtra("profile_image_URL", myImageURL));
         }
         return super.onOptionsItemSelected(item);
     }
@@ -95,6 +95,7 @@ public class FriendsActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 // adding User instances to the ArrayList
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
+
                     users.add(dataSnapshot.getValue(User.class));
                 }
                 // initializing the UserAdapter instance so RecyclerView can show the users
