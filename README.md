@@ -23,7 +23,7 @@
 
 <h2>Apps under Development</h2>
 <ol>
-    <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/ChatApp">Chatting App</a></li>
+    <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/ChatApp">Messaging App</a></li>
 </ol>
 
 <h2>APK Builds</h2>
