@@ -19,11 +19,16 @@
 <ol>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/ToDoList">To-Do List</a></li>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/CodeScanner">QR and Barcode Scanner</a></li>
-
 </ol>
 
 <h2>Apps under Development</h2>
 <ol>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/ChatApp">Chatting App</a></li>
+</ol>
 
+<h2>APK Builds</h2>
+<ol>
+    <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/ToDoList/testing/app-debug.apk">To Do List</a></li>
+    <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/CodeScanner/testing/app-debug.apk">QR & Barcode scanner</a></li>
+    <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/ChatApp/testing/app-debug.apk">Messaging App</a></li>
 </ol>
