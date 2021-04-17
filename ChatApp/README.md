@@ -25,3 +25,4 @@
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/ChatApp/app/src/main/res/layout/user_holder.xml">User Holder Layout</a></li>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/ChatApp/app/src/main/res/layout/message_holder.xml">Message Holder Layout</a></li>
 </ol>
+<h2><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/ChatApp/testing/app-debug.apk">APK<a></h2>
