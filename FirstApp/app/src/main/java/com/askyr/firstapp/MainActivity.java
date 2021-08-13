@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showToastMessage(View view) {
+        
         String firstNumber = edtNumberOne.getText().toString();    // second number
         String secondNumber = edtNumberTwo.getText().toString();   // first number
 
