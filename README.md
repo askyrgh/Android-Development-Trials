@@ -1,5 +1,5 @@
 <h1>Android-Development-Trials</h1>
-<p>This repository holds all the projects I complete to learn more about Native Android Development using Java.</p>
+<p>This repository holds all the micro-projects I completed to learn more about Native Android Development using Java.</p>
 
 <h2>Tutorial Apps</h2>
 <ol>
