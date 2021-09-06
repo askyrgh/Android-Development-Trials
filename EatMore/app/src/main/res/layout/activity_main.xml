@@ -49,7 +49,7 @@
                 android:layout_marginTop="30dp">
 
                 <TextView
-                    android:id="@+id/LogIn_textView"
+                    android:id="@+id/txtLogIn"
                     android:layout_width="140dp"
                     android:layout_height="35dp"
                     android:text="Log In"
@@ -59,7 +59,7 @@
                     android:background="@drawable/text_unselected"/>
 
                 <TextView
-                    android:id="@+id/SignUp_textView"
+                    android:id="@+id/txtSignUp"
                     android:layout_width="140dp"
                     android:layout_height="35dp"
                     android:text="Sign Up"
@@ -87,7 +87,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true">
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/grey">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -99,11 +100,14 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true">
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/grey">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtConfirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
@@ -112,14 +116,27 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/txtForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2.5dp"
+                android:visibility="gone"
+                android:text="Forgot Password"
+                android:textSize="12sp"
+                android:textColor="@color/grey"
+                android:layout_gravity="end"/>
+            
             <Button
+                android:id="@+id/btnSubmit"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/text_selected"
                 android:text="Sign Up"
                 android:textSize="15sp"
                 android:textColor="@color/white_grey"
+                android:textAllCaps="false"
                 android:layout_gravity="center"/>
 
             <TextView
@@ -138,17 +155,18 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_facebook"/>
+                    android:src="@drawable/ic_facebook" />
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/ic_google_circle" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_google_circle"
-/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_twitter"/>
+                    android:src="@drawable/ic_twitter" />
+
             </LinearLayout>
 
         </LinearLayout>
@@ -163,7 +181,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_welcome"
+        android:id="@+id/clWelcome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/launcher"
