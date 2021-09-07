@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EatMore">
-        <activity android:name=".MainActivity" android:theme="@style/Theme.EatMore.Launcher">
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.EatMore.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
