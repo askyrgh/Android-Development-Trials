@@ -2,6 +2,7 @@ package com.askyr.eatmore;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,23 +39,26 @@ public class FoodCategoryAdapter extends RecyclerView.Adapter<FoodCategoryAdapte
         return new CategoryHolder(view);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull CategoryHolder holder, int position) {
         holder.img_CategoryIcon.setImageResource(data.get(position).getImage());
         holder.txt_CategoryTitle.setText(data.get(position).getName());
 
         if(position == selectedItemPos) {
-            holder.txt_CategoryTitle.setTextColor(context.getColor(R.color.red));
-            holder.img_CategoryIcon.setColorFilter(ContextCompat.getColor(context, R.color.red), PorterDuff.Mode.SRC_IN);
             holder.card_Category.setOutlineAmbientShadowColor(context.getColor(R.color.red));
             holder.card_Category.setOutlineSpotShadowColor(context.getColor(R.color.red));
             holder.card_Category.setStrokeWidth(2);
+
+            holder.img_CategoryIcon.setColorFilter(ContextCompat.getColor(context, R.color.red), PorterDuff.Mode.SRC_IN);
+            holder.txt_CategoryTitle.setTextColor(context.getColor(R.color.red));
         }
         else {
             holder.card_Category.setOutlineSpotShadowColor(context.getColor(R.color.grey_variant_1));
             holder.card_Category.setOutlineAmbientShadowColor(context.getColor(R.color.grey_variant_1));
             holder.card_Category.setStrokeWidth(0);
-            holder.img_CategoryIcon.setColorFilter(ContextCompat.getColor(context, R.color.red), PorterDuff.Mode.SRC_IN);
+
+            holder.img_CategoryIcon.setColorFilter(ContextCompat.getColor(context, R.color.grey_variant_1), PorterDuff.Mode.SRC_IN);
             holder.txt_CategoryTitle.setTextColor(context.getColor(R.color.grey_variant_1));
         }
     }
