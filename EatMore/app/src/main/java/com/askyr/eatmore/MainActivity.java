@@ -3,6 +3,7 @@ package com.askyr.eatmore;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -97,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
                     // Start Log-In process
                     Toast.makeText(MainActivity.this, "Logging In", Toast.LENGTH_SHORT).show();
                 }
+                Intent homeScreenIntent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(homeScreenIntent);
             }
         });
     }

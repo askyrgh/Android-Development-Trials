@@ -109,6 +109,7 @@
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewCategories" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewFoodItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
