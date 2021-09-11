@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
     tools:context=".HomeActivity">
 
     <FrameLayout
@@ -87,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewCategories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -104,8 +105,8 @@
         android:text="Pick food item"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/recyclerView"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintStart_toStartOf="@+id/recyclerViewCategories"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewCategories" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
