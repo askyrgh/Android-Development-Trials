@@ -1,7 +1,7 @@
 <h1>Android-Development-Trials</h1>
 <p>This repository holds all the micro-projects I completed to learn more about Native Android Development using Java.</p>
 
-<h2>Tutorial Apps</h2>
+<h2>Concept Tutorials</h2>
 <ol>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/FirstApp">Android template project</a></li>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/AnimalsDemo">Animals Demo</a></li>
