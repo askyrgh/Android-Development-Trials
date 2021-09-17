@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         cl_Welcome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
                 cl_Welcome.setVisibility(View.GONE);
             }
         });
