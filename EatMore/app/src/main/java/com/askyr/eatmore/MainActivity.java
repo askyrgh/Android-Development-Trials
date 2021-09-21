@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Logging In", Toast.LENGTH_SHORT).show();
                 }
                 Intent homeScreenIntent = new Intent(MainActivity.this, HomeActivity.class);
+                
                 startActivity(homeScreenIntent);
             }
         });
