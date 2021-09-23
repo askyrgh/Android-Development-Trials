@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        
         super.onCreate(savedInstanceState);
         setTheme(R.style.Theme_EatMore);
         setContentView(R.layout.activity_main);
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         cl_Welcome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                
                 cl_Welcome.setVisibility(View.GONE);
             }
         });
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         txt_LogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                
                 onSignUp = false;
 
                 txt_LogIn.setBackground(getResources().getDrawable(R.drawable.text_selected));
@@ -70,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         txt_SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                
                 onSignUp = true;
 
                 txt_LogIn.setBackground(getResources().getDrawable(R.drawable.text_unselected));
@@ -89,11 +93,14 @@ public class MainActivity extends AppCompatActivity {
         btn_Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                
                 if (onSignUp) {
+                    
                     // Start Sign-Up process
                     Toast.makeText(MainActivity.this, "Signing Up", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    
                     // Start Log-In process
                     Toast.makeText(MainActivity.this, "Logging In", Toast.LENGTH_SHORT).show();
                 }
