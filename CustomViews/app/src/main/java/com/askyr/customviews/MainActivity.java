@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText("You clicked Button-1 of Custom View");
             }
         };
-        
+
         customView.setButton1onClickListener(btnClickListener);
     }
 }
