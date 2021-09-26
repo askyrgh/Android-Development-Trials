@@ -44,7 +44,13 @@ public class FirstCustomView extends FrameLayout {
         button1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Clicked Button-1", Toast.LENGTH_SHORT).show();
+
+                if(button1onClickListener != null) {
+                    button1onClickListener.onClick(v);
+                }
+                else {
+                    Toast.makeText(getContext(), "Clicked Button-1", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
