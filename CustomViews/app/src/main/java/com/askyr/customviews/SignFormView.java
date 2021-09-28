@@ -2,11 +2,22 @@ package com.askyr.customviews;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 public class SignFormView extends LinearLayout {
+
+    private EditText edtEmail;
+    private Button btnGetData;
+    private OnGetDataClicked onGetDataClicked;
+
     public SignFormView(Context context) {
         super(context);
         init();
@@ -23,6 +34,26 @@ public class SignFormView extends LinearLayout {
     }
 
     private void init() {
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.sign_form_view_layout, this);
+        edtEmail = view.findViewById(R.id.edt_email);
+        btnGetData = view.findViewById(R.id.btn_getData);
 
+        btnGetData.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getContext(), edtEmail.getText().toString(), Toast.LENGTH_SHORT).show();
+                if(onGetDataClicked != null) {
+                    onGetDataClicked.OnButtonClicked(edtEmail.getText().toString());
+                }
+            }
+        });
+    }
+
+    public void SetOnGetDataClicked(OnGetDataClicked onGetDataClicked) {
+        this.onGetDataClicked = onGetDataClicked;
+    }
+
+    public interface OnGetDataClicked {
+        void OnButtonClicked(String value);
     }
 }
