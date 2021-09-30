@@ -2,6 +2,9 @@
 <resources>
     <declare-styleable name="SignFormView">
         <attr name="initialEmail" format="string"/>
+        <attr name="initialName" format="string"/>
+        <attr name="initialUsername" format="string"/>
+        <attr name="initialPassword" format="string"/>
         <attr name="customTextSize" format="integer"/>
     </declare-styleable>
 </resources>

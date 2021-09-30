@@ -2,7 +2,6 @@ package com.askyr.customviews;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -14,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private FirstCustomView customView;
     private TextView textView;
     private FrameLayout flContainer;
-    private String userEmail;
+    private String user_Email, user_name, user_username, user_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,22 +40,25 @@ public class MainActivity extends AppCompatActivity {
 
         customView.setButton1onClickListener(btnClickListener);
 
-        // Creating a new SSignFormView through Java code only
+        // Creating a new SignFormView through Java code only
 
         flContainer = findViewById(R.id.fl_container);
         SignFormView signFormView = new SignFormView(getBaseContext());
 
         signFormView.SetOnGetDataClicked(new SignFormView.OnGetDataClicked() {
             @Override
-            public void OnButtonClicked(String value) {
-                userEmail = value;
-                Toast.makeText(MainActivity.this, userEmail + " - got it in activity", Toast.LENGTH_SHORT).show();
+            public void OnButtonClicked(String email, String name, String username, String password) {
+                user_Email = email;
+                user_name = name;
+                user_username = username;
+                user_password = password;
+
+                Toast.makeText(MainActivity.this, user_Email + " " + user_name + " " + user_username + " " + user_password, Toast.LENGTH_SHORT).show();
+
                 flContainer.removeView(signFormView);
             }
         });
 
         flContainer.addView(signFormView);
-
-
     }
 }
