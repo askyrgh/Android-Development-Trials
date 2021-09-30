@@ -31,4 +31,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <com.askyr.customviews.SignFormView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:initialEmail="user@email.com"
+        app:customTextSize="15" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

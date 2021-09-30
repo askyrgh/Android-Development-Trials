@@ -1,6 +1,7 @@
 package com.askyr.customviews;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +26,18 @@ public class SignFormView extends LinearLayout {
 
     public SignFormView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+
+        // initializing custom view
         init();
+
+        // Fetching attribute value from the xml
+        TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.SignFormView);
+        String email = attributes.getString(R.styleable.SignFormView_initialEmail);
+        int size = attributes.getInt(R.styleable.SignFormView_customTextSize, 20);
+
+        // updating value on screen
+        edtEmail.setText(email);
+        edtEmail.setTextSize(size);
     }
 
     public SignFormView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SignFormView">
+        <attr name="initialEmail" format="string"/>
+        <attr name="customTextSize" format="integer"/>
+    </declare-styleable>
+</resources>
