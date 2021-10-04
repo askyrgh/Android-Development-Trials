@@ -13,6 +13,7 @@
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/UIThings">Intoduction To UI Design</a></li>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/VideoView">VideoView component Tutorial</a></li>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/EatMore">Front-end Design for food ordering app</a></li>
+    <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/CustomViews">Custom Views</a></li>
 </ol>
 
 <h2>Fully Functional Apps</h2>
