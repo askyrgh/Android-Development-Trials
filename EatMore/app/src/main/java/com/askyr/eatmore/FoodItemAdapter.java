@@ -23,6 +23,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
     int selectedFoodItemPos = 0;
 
     public FoodItemAdapter(List<FoodItem> data, Context context) {
+        
         this.data = data;
         this.context = context;
     }
@@ -30,6 +31,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
     @NonNull
     @Override
     public FoodItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.food_view_holder, parent, false);
 
@@ -45,6 +47,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
         holder.rtb_FoodItemRating.setRating(data.get(position).getRating());
 
         if(selectedFoodItemPos == position) {
+            
             holder.txt_FoodItemName.setTextColor(Color.WHITE);
             holder.txt_FoodItemPrice.setTextColor(Color.WHITE);
 
@@ -54,6 +57,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
             holder.linearLayout.setBackgroundResource(R.drawable.launcher_image);
         }
         else {
+            
             holder.txt_FoodItemName.setTextColor(Color.BLACK);
             holder.txt_FoodItemPrice.setTextColor(Color.BLACK);
 
