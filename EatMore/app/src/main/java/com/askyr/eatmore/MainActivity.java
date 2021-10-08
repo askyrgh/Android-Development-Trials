@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 txt_SignUp.setElevation(5);
 
                 btn_Submit.setText("Sign Up");
+                
                 txt_ForgotPassword.setVisibility(View.GONE);
                 til_ConfirmPassword.setVisibility(View.VISIBLE);
             }
@@ -104,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     // Start Log-In process
                     Toast.makeText(MainActivity.this, "Logging In", Toast.LENGTH_SHORT).show();
                 }
+                
                 Intent homeScreenIntent = new Intent(MainActivity.this, HomeActivity.class);
                 
                 startActivity(homeScreenIntent);
