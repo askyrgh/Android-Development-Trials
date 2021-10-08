@@ -16,6 +16,7 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
@@ -27,6 +28,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setCategories() {
+        
         List<FoodCategory> data = new ArrayList<>();
 
         FoodCategory foodCategory1 = new FoodCategory("Chicken", R.drawable.ic_chicken);
