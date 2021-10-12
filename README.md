@@ -22,11 +22,6 @@
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/CodeScanner">QR and Barcode Scanner</a></li>
 </ol>
 
-<h2>Apps under Development</h2>
-<ol>
-    <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/ChatApp">Messaging App</a></li>
-</ol>
-
 <h2>APK Builds</h2>
 <ol>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/ToDoList/testing/app-debug.apk">To Do List</a></li>
