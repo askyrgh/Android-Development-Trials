@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CounterView">
+        <attr name="progressAndText" format="integer"/>
+        <attr name="baseArcColor" format="reference"/>
+        <attr name="progressArcColor" format="reference"/>
+        <attr name="insideCircleColor" format="reference"/>
+    </declare-styleable>
+</resources>

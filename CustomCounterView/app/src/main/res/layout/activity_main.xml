@@ -7,7 +7,25 @@
     tools:context=".MainActivity">
 
     <com.askyr.customcounterview.CounterView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:id="@+id/counter_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:baseArcColor="@color/teal_200"
+        app:insideCircleColor="@color/teal_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:progressAndText="90"
+        app:progressArcColor="@color/purple_200" />
+
+    <com.askyr.customcounterview.CounterView
+        android:id="@+id/counter_view1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintStart_toStartOf="@+id/counter_view"
+        app:layout_constraintTop_toTopOf="@+id/counter_view"
+        app:progressAndText="70"
+        app:progressArcColor="@color/purple_500"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
