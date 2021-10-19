@@ -28,3 +28,9 @@
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/CodeScanner/testing/app-debug.apk">QR & Bar Code scanner</a></li>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/blob/main/ChatApp/testing/app-debug.apk">Messaging App</a></li>
 </ol>
+
+<h2>Plugins/Libraries/Tools</h2>
+<ol>
+    <li><a href="https://github.com/asystat/Final-Android-Resizer">Resize image assets for all target resolutions</a></li>
+    <li><a href="https://github.com/yuriy-budiyev/code-scanner">QR Code Scanner</a></li>
+</ol>
