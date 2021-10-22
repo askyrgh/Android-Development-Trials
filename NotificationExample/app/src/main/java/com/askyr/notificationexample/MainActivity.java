@@ -39,13 +39,13 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     setUpNotifications_oldDevices();
                 }
-
             }
         };
 
         btn_showNotification.setOnClickListener(onClickListener);
     }
 
+    // This method pops notifications for devices with ANDROID O and later
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void setUpNotification() {
 
@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         notificationManager.notify(2, builder1.build());
     }
 
+    // This method pops notifications for devices with SDK version before ANDROID O
     private void setUpNotifications_oldDevices() {
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
