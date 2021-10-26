@@ -15,7 +15,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String TAG = "maid-test";
+    public static final String TAG = "pn-test";
 
     private Button btnSHD, btnDF;
 
