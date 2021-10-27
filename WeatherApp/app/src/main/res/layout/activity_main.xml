@@ -7,12 +7,35 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/txt_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_city"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:hint="Enter City Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_result" />
+
+    <Button
+        android:id="@+id/btn_fetch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Fetch Data"
+        app:layout_constraintEnd_toEndOf="@+id/edt_city"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/edt_city"
+        app:layout_constraintTop_toBottomOf="@+id/edt_city" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
