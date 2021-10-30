@@ -14,6 +14,8 @@
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/VideoView">VideoView component Tutorial</a></li>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/EatMore">Front-end Design for food ordering app</a></li>
     <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/CustomViews">Custom Views</a></li>
+    <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/NotificationExample">Notifications Tutorial</a></li>
+    <li><a href="https://github.com/SKY-ROY/Android-Development-Trials/tree/main/PushNotificationExample">FCM Push Notifications Tutorial</a></li>
 </ol>
 
 <h2>Fully Functional Apps</h2>
@@ -33,4 +35,5 @@
 <ol>
     <li><a href="https://github.com/asystat/Final-Android-Resizer">Resize image assets for all target resolutions</a></li>
     <li><a href="https://github.com/yuriy-budiyev/code-scanner">QR Code Scanner</a></li>
+    <li><a href="https://square.github.io/retrofit">Retrofit library</a></li>
 </ol>
