@@ -66,6 +66,6 @@ public class WebViewLauncherActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
+        webView.destroy();
     }
 }
