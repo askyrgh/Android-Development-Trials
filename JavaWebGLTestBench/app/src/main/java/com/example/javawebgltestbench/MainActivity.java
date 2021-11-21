@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast mToast = Toast.makeText(MainActivity.this, "Launching URL", Toast.LENGTH_SHORT);
                 mToast.show();
+        
                 launchWebView(gameURL);
             }
         });
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast mToast = Toast.makeText(MainActivity.this, "Launching URL", Toast.LENGTH_SHORT);
                 mToast.show();
+                
                 launchWebView(urlEditText.getText().toString());
             }
         });
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void launchWebView(String requestedURL) {
         Intent launcherIntent = new Intent(this, WebViewLauncherActivity.class).putExtra(URL_MESSAGE, requestedURL);
+        
         startActivity(launcherIntent);
     }
 }
