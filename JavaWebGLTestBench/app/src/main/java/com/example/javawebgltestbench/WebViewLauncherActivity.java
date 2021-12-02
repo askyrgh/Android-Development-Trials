@@ -29,8 +29,6 @@ public class WebViewLauncherActivity extends AppCompatActivity {
         webView = findViewById(R.id.webView);
         String requestedURL = getIntent().getStringExtra(URL_MESSAGE);
 
-        //webView.setWebViewClient(new WebViewClient());
-
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
 
