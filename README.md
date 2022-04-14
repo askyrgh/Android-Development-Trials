@@ -34,6 +34,6 @@
 <h2>Plugins/Libraries/Tools</h2>
 <ol>
     <li><a href="https://github.com/asystat/Final-Android-Resizer">Resize image assets for all target resolutions</a></li>
-    <li><a href="https://github.com/yuriy-budiyev/code-scanner">QR Code Scanner</a></li>
+    <li><a href="https://github.com/yuriy-budiyev/code-scanner">QR Code Scanner </a></li>
     <li><a href="https://square.github.io/retrofit">Retrofit library</a></li>
 </ol>
