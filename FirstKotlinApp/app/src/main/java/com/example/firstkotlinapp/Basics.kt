@@ -7,7 +7,7 @@ fun main() {
 
       val name2 = "SKY"
 //      name2 = "Akash" // Illegal statement
-      print("Hello " + name2)
+      print("\nHello " + name2)
 
       // TODO: Update headings according to topic
 
@@ -36,5 +36,5 @@ fun main() {
       val myString: String = "Hello there, how's it going?"
       var firstCharInStr: Char = myString[0] // returns 'H'
 
-      print("First Character $firstCharInStr");
+      print("\nFirst Character $firstCharInStr");
 }
