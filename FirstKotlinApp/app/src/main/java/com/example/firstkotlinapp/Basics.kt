@@ -162,4 +162,20 @@ fun main() {
       }
       println("\n or")
 
+      // break and continue
+
+      for (i in 1 until 20) {
+            print("${i} ")
+            if(i/2 == 5) {
+                  println("loop ends here")
+                  break
+            }
+      }
+
+      for (i in 1 until 20) {
+            if(i/2 == 5) {
+                  continue
+            }
+            print("${i} ")
+      }
 }
