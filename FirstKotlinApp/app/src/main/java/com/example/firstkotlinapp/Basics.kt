@@ -128,9 +128,9 @@ fun main() {
 
       var x : Any = 13.55
       when (x) {
-            is Int -> print("$x is an Integer type")
-            is Double -> print("$x is a Floating type")
-            is String -> print("$x is a String type")
+            is Int -> println("$x is an Integer type")
+            is Double -> println("$x is a Floating type")
+            is String -> println("$x is a String type")
             else -> println("None of the above")
       }
 
@@ -178,4 +178,53 @@ fun main() {
             }
             print("${i} ")
       }
+      println();
+
+      // functions
+      myFunction();
+      var res1 = addUp(5,3)    // arguments -> 5, 3
+      println("result is ${res1}")
+      var res2 = avg(8.5f, 8.0f);
+      println("result is ${res2}")
+
+      // nullables
+
+      var name : String = "Akash"   // variable not declared as nullable
+//      name = null // Compilation error as name is not declared a nullable
+
+      var nullableName : String? = "Akash"      // variable declared as nullable
+//      nullableName = null
+
+      var len1 = name.length
+      var len2 = nullableName?.length
+
+//      println("lower case:  ${nullableName?.lowercase()}") // Compilation error
+      println("Length of nullableName: ${nullableName?.length}")
+//      nullableName?.let{ println("Length of nullableName: ${it.length}") }
+
+      // Elvis operator ( ?: )
+      // It is used to assign a default value to a variable in case where the nullable variable contains a null value
+      val name3 = nullableName ?: "Guest" // if nullableName is not empty it's value will be assigned otherwise "Guest"
+      println("name3 is ${name3}")
+
+      //Not Null Assertion operator ( !! )
+      println("name is ${nullableName!!.lowercase()}")
+
+}
+
+// Function - A standalone function independent of any class
+// Method - A function within a class
+// parameters - a, b
+// return type - Int
+// Function Name - addUp
+fun addUp(a: Int, b: Int) : Int{
+      return a+b;
+}
+
+fun avg(a: Float, b: Float) : Float{
+      return (a+b)/2
+}
+
+fun myFunction() {
+      println("Called from myFunction()");
 }
