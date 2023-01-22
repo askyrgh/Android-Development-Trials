@@ -12,17 +12,18 @@ fun main() {
     DataClassDemo()
 }
 
+// Scope and shawdowing example
 fun scopeAndShadowingDemo(a: Int) {
     var a = 10
     println("a = $a")
 }
 
+// Constructor example
 fun constructorDemo() {
     var sky: Person = Person("SKY", "ROY")
     var def: Person = Person()
 }
 
-// Constructor example
 class Person constructor(firstName:String = "FirstName", lastName: String = "LastName"){
     // Example of a class
 
@@ -32,6 +33,7 @@ class Person constructor(firstName:String = "FirstName", lastName: String = "Las
     }
 }
 
+// lateinit example
 fun lateinitDemo() {
     var myCar = Car()
     println(myCar.owner)
@@ -41,7 +43,6 @@ fun lateinitDemo() {
     println("model is ${myCar.model}")
 }
 
-// lateinit example
 class Car() {
     lateinit var owner : String // doesn't need to be initialized immediately
     val brand : String = "BMW"
@@ -68,6 +69,7 @@ class Car() {
     }
 }
 
+// Data Class example
 fun DataClassDemo() {
     var user1 = User(1, "SKY")
     val name = user1.name
@@ -94,5 +96,4 @@ fun DataClassDemo() {
     println("name=$name_copy")
 }
 
-// Data Class example
 data class User(val id: Long, var name: String)
