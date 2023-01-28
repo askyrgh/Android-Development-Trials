@@ -1,6 +1,7 @@
 package com.example.firstkotlinapp
 
 import java.lang.IllegalArgumentException
+import kotlin.math.floor
 
 fun main() {
     scopeAndShadowingDemo(9)
@@ -14,6 +15,8 @@ fun main() {
 //    InheritanceDemo()
 
     InterfaceDemo()
+
+    typecastingDemo()
 }
 
 // Scope and shawdowing example
@@ -283,4 +286,41 @@ fun AbstractClassDemo() {
 
     human.run()
     elephant.run()
+}
+
+// Typecasting example
+
+fun typecastingDemo() {
+    val mixedTypeList: List<Any> = listOf("SKY", "ROY", 5, 6, 98, "askyr")
+
+    for (e in mixedTypeList) {
+        when(e) {
+            is Int -> println("Integer: $e")
+            is Double -> println("Double: $e with floor value: ${floor(e)}")
+            is String -> println("String: $e of length: ")
+            else -> println("Unknown type")
+        }
+    }
+
+    // Smart Cast
+    val obj1: Any = "I have a dream"
+    if(obj1 !is String) {
+        println("Not a String")
+    }
+    else {
+        println("Found a String of length: {${obj1.length}")
+    }
+
+    // Explicit (unsafe) Casting using the "as" keyword - can go wrong
+    val str1: String = obj1 as String
+    println(str1. length)
+
+    val obj2: Any = 1337
+//    val str2: String = obj2 as String // shows error
+//    println(str2)
+
+    // Explicit (safe) casting using the "as?" keyword
+    val obj3: Any = 1337
+    val str3: String? = obj3 as? String // Works
+    println(str3) // Prints null
 }
