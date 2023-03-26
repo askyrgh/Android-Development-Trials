@@ -1,7 +1,9 @@
 package com.example.firstkotlinapp
 
 fun main() {
-    LambdaExpressionDemo()
+//    LambdaExpressionDemo()
+//    unsafeCastDemo()
+//    safeCastDemo()
 }
 
 // Lambda Expression
@@ -12,4 +14,20 @@ fun LambdaExpressionDemo() {
 
     val sum2 = {a:Int, b:Int -> println(a+b) }
     sum2(2,3)
+}
+
+fun unsafeCastDemo() {
+    val obj: Any? = null
+    val str: String = obj as String
+    println(str)    // Error
+}
+
+fun safeCastDemo() {
+    val location: Any = "Kotlin"
+
+    val safeString: String? = location as? String
+    val safeInt: Int? = location as? Int
+    println(safeString)
+
+    println(safeInt)
 }
