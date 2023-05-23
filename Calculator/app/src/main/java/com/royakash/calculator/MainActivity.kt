@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity() {
                     prefix = "-"
                     tvVal = tvVal.substring(1)
                 }
-
+/*
                 if(tvVal.contains("+")) {
                     val splitVal = tvVal.split("+")
 
@@ -167,6 +167,20 @@ class MainActivity : AppCompatActivity() {
 
                     tvInput?.text = result.toString()
                 }
+ */
+                if(tvVal.contains("+")) {
+                    arithmeticOperation(tvVal, prefix, "+")
+                }
+                else if(tvVal.contains("-")) {
+                    arithmeticOperation(tvVal, prefix, "-")
+                }
+                else if(tvVal.contains("*")) {
+                    arithmeticOperation(tvVal, prefix, "*")
+                }
+                else if(tvVal.contains("/")) {
+                    arithmeticOperation(tvVal, prefix, "/")
+                }
+
             }
             catch(e: ArithmeticException) {
                 // catch arithmetic exceptions like division by 0
@@ -176,34 +190,41 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun arithmeticOperation(tvVal: String, prefix: String, operator: String) {
-        if(tvVal.contains(operator)) {
-            val splitVal = tvVal.split(operator)
+        val splitVal = tvVal.split(operator)
 
-            var operandOne = if(prefix.isEmpty()) splitVal[0] else (prefix + splitVal[0])
-            var operandTwo = splitVal[1]
-            var result = 0.00
-            when (operator) {
-                "+" -> {
-                    result = (operandOne.toDouble() + operandTwo.toDouble())
-                }
-                "-" -> {
-                    result = (operandOne.toDouble() - operandTwo.toDouble())
-                }
-                "*" -> {
-                    result = (operandOne.toDouble() * operandTwo.toDouble())
-                }
-                "/" -> {
-                    result = (operandOne.toDouble() / operandTwo.toDouble())
-                }
+        var operandOne = if(prefix.isEmpty()) splitVal[0] else (prefix + splitVal[0])
+        var operandTwo = splitVal[1]
+        var result = 0.00
+        when (operator) {
+            "+" -> {
+                result = (operandOne.toDouble() + operandTwo.toDouble())
             }
-
-            tvInput?.text = result.toString()
+            "-" -> {
+                result = (operandOne.toDouble() - operandTwo.toDouble())
+            }
+            "*" -> {
+                result = (operandOne.toDouble() * operandTwo.toDouble())
+            }
+            "/" -> {
+                result = (operandOne.toDouble() / operandTwo.toDouble())
+            }
         }
+
+        tvInput?.text = removeZeroAfterDecimal(result.toString())
     }
 
     fun onClearClick() {
         tvInput?.text = ""
         lastDecimal = false
         lastNumeric = false
+    }
+
+    private fun removeZeroAfterDecimal(result: String) : String {
+        var value = result
+        if(result.contains(".0")) {
+            value = result.substring(0, result.length - 2)
+        }
+
+        return value
     }
 }
