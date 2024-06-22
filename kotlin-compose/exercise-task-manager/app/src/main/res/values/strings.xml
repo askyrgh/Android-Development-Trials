@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">exercise-task-manager</string>
+    <string name="task_status">All tasks completed</string>
+    <string name="acknowledgement">Nice work!</string>
+</resources>
