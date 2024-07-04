@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">exercise-art-space</string>
+    <string name="art_sailing_under_the_bridge">Sailing Under The Bridge</string>
+    <string name="artist_kat_kuan">Kat Kuan</string>
+    <string name="year_2017">2017</string>
+    <string name="still_life_of_blue_roses_and_other_flowers">Still Life Of Blue Roses And Other Flowers</string>
+    <string name="artist_owen_scott">Owen Scott</string>
+    <string name="year_2021">2021</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+</resources>
