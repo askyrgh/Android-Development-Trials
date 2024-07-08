@@ -1,8 +1,8 @@
 <resources>
 <!--    <string name="app_name">exercise-superheroes</string>-->
     <string name="app_name">Superheroes</string>
-    <string name="hero1">Nick the Night and Day</string>
-    <string name="description1">The Jetpack Hero</string>
+    <string name="hero1">The Jetpack Hero</string>
+    <string name="description1">Nick the Night and Day</string>
     <string name="hero2">Reality Protector</string>
     <string name="description2">Understands the absolute truth</string>
     <string name="hero3">Andre the Giant</string>

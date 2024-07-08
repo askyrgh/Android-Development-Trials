@@ -1,5 +1,7 @@
 package com.askyr.exercise_superheroes
 
+import ExerciseSuperheroesTheme
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -11,18 +13,27 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.askyr.exercise_superheroes.ui.theme.ExercisesuperheroesTheme
+import com.askyr.exercise_superheroes.model.HeroesRepository
+
+//import com.askyr.exercise_superheroes.ui.theme.ExerciseSuperheroesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            ExercisesuperheroesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+            ExerciseSuperheroesTheme {
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    topBar = {
+                        SuperHeroTopAppBar()
+                    }
+                ) {
+                    it ->
+                    SuperHeroList(
+                        superHeroes = HeroesRepository.heroes,
+                        modifier = Modifier,
+                        contentPadding = it
                     )
                 }
             }
@@ -30,18 +41,11 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    ExercisesuperheroesTheme {
-        Greeting("Android")
+fun SuperHeroesPreview() {
+    ExerciseSuperheroesTheme {
+        SuperHeroList(superHeroes = HeroesRepository.heroes, modifier = Modifier)
     }
 }

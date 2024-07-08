@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import com.askyr.exercise_superheroes.R
 
 object HeroesRepository {
-    @SuppressLint("ResourceType")
     val heroes = listOf(
         Hero(
             nameRes = R.string.hero1,
