@@ -4,6 +4,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import com.example.unscramble.data.SCORE_INCREASE
 import com.example.unscramble.data.allWords
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -68,16 +69,42 @@ class GameViewModel: ViewModel() {
     // check whether the word guessed by user is valid or not
     fun checkUserGuess() {
         if(userGuess.equals(currentWord, ignoreCase = true)) {
+            // increase score for correct guess
+            val updatedScore = _uiState.value.score.plus(SCORE_INCREASE)
 
+            // updating game state
+            updateGameState(updatedScore)
         }
         else {
             // user's guess is wrong, show an error
-
             // updating the local instance i.e. _uiState, with isGuessedWordWrong = true
             _uiState.update { currentState -> currentState.copy(isGuessedWordWrong = true) }
         }
 
         // Reset user guess
+        updateUserGuess("")
+    }
+
+    private fun updateGameState(updatedScore: Int) {
+        // updating the local instate of UIState with
+        //  -the guessed word status,
+        //  -next scrambled word to be displayed,
+        //  -updated score
+        //  -updated unscrambled word count
+        _uiState.update { currentState ->
+            currentState.copy(
+                isGuessedWordWrong = false,
+                currentScrambledWord = pickRandomWordAndShuffle(),
+                currentWordCount = currentState.currentWordCount.inc(),
+                score = updatedScore
+            )
+        }
+    }
+
+    fun skipWord() {
+        updateGameState(_uiState.value.score)
+
+        // clearing the current visible response on the input field
         updateUserGuess("")
     }
 }
