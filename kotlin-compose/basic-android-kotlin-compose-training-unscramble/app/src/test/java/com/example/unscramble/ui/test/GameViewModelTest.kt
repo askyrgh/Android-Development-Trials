@@ -6,6 +6,7 @@ import com.example.unscramble.ui.GameViewModel
 import org.junit.Test
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 
 
 class GameViewModelTest {
@@ -25,6 +26,21 @@ class GameViewModelTest {
         assertFalse(currentGameUiState.isGuessedWordWrong)
         // Assert that score is updated correctly.
         assertEquals(SCORE_AFTER_FIRST_CORRECT_ANSWER, currentGameUiState.score)
+    }
+
+    @Test
+    fun gameViewModel_IncorrectGuess_ErrorFlagSet() {
+        val incorrectPlayerWord = "and"
+
+        viewModel.updateUserGuess(incorrectPlayerWord)
+        viewModel.checkUserGuess()
+
+        val currentGameUiState = viewModel.uiState.value
+
+        // Assert that score is unchanged
+        assertEquals(0, currentGameUiState.score)
+        // Assert that checkUserGuess() method updates isGuessedWordWrong correctly
+        assertTrue( currentGameUiState.isGuessedWordWrong)
     }
 
     companion object {
